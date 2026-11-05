@@ -8,6 +8,10 @@ concurrency:
   group: ci-${{ github.event.pull_request.number }}
   cancel-in-progress: true   
 
+permissions: {}  
+
 jobs:
   build:
+    permissions:
+      contents: read
     uses: ./.github/workflows/_build.yaml
